@@ -46,8 +46,8 @@ const Support = () => {
                     a premier NGO dedicated to transforming lives through education and opportunity.
                   </p>
                   <p className="relative pl-4 md:pl-6 border-l-4 border-[#FFD600]/30">
-                    Since our founding in 2015, we've established <span className="font-medium text-[#FFD600]">23 learning centers</span>, 
-                    impacting over <span className="font-medium text-[#FFD600]">15,000 children</span> through innovative educational programs.
+                    Since our founding in 2015, we've established <span className="font-medium text-[#FFD600]">learning centers</span>, 
+                    impacting over <span className="font-medium text-[#FFD600]"> children</span> through innovative educational programs.
                   </p>
                 </motion.div>
               </div>

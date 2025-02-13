@@ -11,7 +11,7 @@ const About = () => {
 
   const values = [
     { title: 'Child-Centered Philosophy', icon: HeartHandshake, color: 'text-rose-400' },
-    { title: 'Mentorship Excellence', icon: LampDesk, color: 'text-indigo-400' },
+    // { title: 'Mentorship Excellence', icon: LampDesk, color: 'text-indigo-400' },
     { title: 'Community Impact', icon: Globe, color: 'text-emerald-400' }
   ];
 
@@ -68,7 +68,7 @@ const About = () => {
         </motion.div>
 
         {/* Impact Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-24">
+        {/* <div className="grid md:grid-cols-3 gap-8 mb-24">
           {stats.map((stat, i) => {
             const Icon = stat.icon;
             return (
@@ -94,7 +94,7 @@ const About = () => {
               </motion.div>
             );
           })}
-        </div>
+        </div> */}
 
         {/* Founders Story */}
         <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
@@ -103,24 +103,11 @@ const About = () => {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            <div className="grid grid-cols-2 h-full gap-4 p-4">
-              <div className="relative rounded-3xl overflow-hidden">
-                <img
-                  src="/teena-benjamin.jpg"
-                  alt="Teena Benjamin"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1830]/90 via-transparent to-transparent" />
-              </div>
-              <div className="relative rounded-3xl overflow-hidden">
-                <img
-                  src="/linos-david.jpg"
-                  alt="Linos David"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1830]/90 via-transparent to-transparent" />
-              </div>
+            <div className="p-8 space-y-6 text-purple-100/80 leading-relaxed h-full overflow-y-auto">
+              
+              <p>Our society does not understand children or their needs. Parents are not taught about them and often feel lost and confused as to how to help their children. In the light of the growing trend of antisocial behavior, addiction, suicide and mental health issues among school children, it is not enough for the government to take steps to help them. It is imperative for parents, teachers, psychologists and other mentors to pitch in and give children the tools and resources they need to navigate their world and create their space in it. We provide a platform for children to receive the support and the care that they need to grow up into happy, healthy and pro-social adults.</p>
             </div>
+
             <div className="absolute bottom-6 left-6 right-6 p-6 bg-white/5 backdrop-blur-xl rounded-xl">
               <h3 className="text-2xl font-bold text-[#FFD600] mb-2">Visionary Leadership</h3>
               <p className="text-purple-100/80">
@@ -191,7 +178,7 @@ const About = () => {
                   <h4 className="text-2xl font-bold text-[#FFD600] mb-4">Key Milestone</h4>
                   <p className="text-purple-100/70">
                     {year === 2011 && 'Linos David establishes Love You Children Mission, laying foundation for future work'}
-                    {year === 2013 && 'Teena Benjamin begins mentoring underprivileged children while completing psychology studies'}
+                    {year === 2013 && 'Teena Benjamin begins mentoring underprivileged children while completing  studies'}
                     {year === 2020 && 'Official launch of SPSK EduTech combining psychological expertise with grassroots experience'}
                     {year === 2023 && 'Expansion to digital platforms serving 15+ states with 98% satisfaction rate'}
                   </p>

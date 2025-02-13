@@ -86,7 +86,7 @@ const Home = () => {
               </motion.h1>
               
               {/* Interactive Stats Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[100vw] ">
+              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[100vw] ">
                 {[
                   { number: '98%', label: 'Success Rate' },
                   { number: '5K+', label: 'Parents Trust' },
@@ -101,7 +101,7 @@ const Home = () => {
                     <div className="text-sm text-purple-100/80">{stat.label}</div>
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
 
               {/* Enhanced CTA Section */}
               <motion.div 
@@ -126,7 +126,7 @@ const Home = () => {
                 </motion.div>
 
                 {/* Video Preview Button */}
-                <motion.div 
+                {/* <motion.div 
                   whileHover={{ scale: 1.05 }}
                   className="relative group cursor-pointer w-full"
                 >
@@ -137,7 +137,7 @@ const Home = () => {
                     </div>
                     <span className="font-medium w-full">Watch Success Story</span>
                   </div>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </motion.div>
 
@@ -161,7 +161,7 @@ const Home = () => {
               </div>
 
               {/* Floating Badges */}
-              <div className="absolute bottom-2 md:bottom-8 left-0 right-0 flex flex-col sm:flex-row justify-center gap-2 px-4">
+              {/* <div className="absolute bottom-2 md:bottom-8 left-0 right-0 flex flex-col sm:flex-row justify-center gap-2 px-4">
                 {['Google 5★ Reviews', '2024 Education Award'].map((badge, i) => (
                   <motion.div
                     key={i}
@@ -171,7 +171,7 @@ const Home = () => {
                     ★★★★★ {badge}
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </motion.div>
@@ -224,15 +224,18 @@ const Home = () => {
                   Empowering Young Lives Through Education
                 </motion.h2>
                 <motion.p 
-                  className="text-lg text-purple-100/80 leading-relaxed"
+                  className="text-lg text-purple-100/80 leading-relaxed text-justify "
                   variants={childVariants}
+                  
                 >
-                  SPSK EduTech stands with children to help them realize their potential for joyful, meaningful lives. 
-                  Founded in 2020 by Teena Benjamin and Linos David, we're dedicated to holistic child development 
-                  through counseling, workshops, and mentorship programs.
+                 SPSK EduTech is an organization that stands for and with children. Children are born with the potential to live joyful, meaningful, productive and pro-social lives. If they are raised in an environment where their physical, emotional, intellectual and spiritual needs are met sufficiently, they grow up to be healthy adults. When some of these needs are not met, they may develop disordered behaviors and attitudes.
+SPSK EduTech was founded in 2020 by Teena Benjamin, a Psychology student, inspired by Linos David, an educationist, social worker, and motivational speaker.  
+Teena, an experienced counselor and social worker, has mentored underprivileged children since 2013. Her passion for child development led her to become a certified psychologist, conducting workshops for children, parents, and teachers to foster better relationships and resilience in children.  
+Linos David has worked with children since 1990. In 2011, he founded Love You Children Mission, an NGO supporting underprivileged children through education. Over time, he recognized that even privileged children struggled with mental health issues due to a lack of mentorship. This realization led him to co-found SPSK EduTech with Teena, aiming to support the holistic development of all children.
+ 
                 </motion.p>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              {/* <div className="grid md:grid-cols-2 gap-6">
                 {[
                   { number: "34+ Years", text: "Combined Experience in Child Development" },
                   { number: "5000+", text: "Lives Impacted Through Our Programs" },
@@ -250,7 +253,7 @@ const Home = () => {
                     <p className="text-purple-100/80 mt-2">{item.text}</p>
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
             </motion.div>
             <motion.div 
               variants={childVariants}
@@ -494,7 +497,7 @@ const Home = () => {
                         />
                       ))}
                     </div> */}
-                    <p className="text-sm text-white/80">Meet our team of 12+ experts</p>
+                    {/* <p className="text-sm text-white/80">Meet our team of 12+ experts</p> */}
                   </div>
                 </div>
                 <motion.div 
@@ -652,13 +655,13 @@ const Home = () => {
               </Link>
             </motion.div>
             
-            <motion.a 
-              href="/impact"
+            {/* <motion.a 
+              href="/services"
               className="p-6 rounded-2xl border-2 border-[#FFD600] text-[#FFD600] hover:bg-[#FFD600]/10 transition-all"
               whileHover={{ y: -3 }}
             >
               See Success Stories →
-            </motion.a>
+            </motion.a> */}
           </motion.div>
         </div>
       </motion.section>
@@ -696,7 +699,13 @@ const servicesData = [
     title: "Book Club for Children and Parents",
     image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Reading is a scientifically proven factor that contributes to future academic achievement, intelligence, creativity, empathy and resilience in children. SPSK's book club, The Blyton Bunch, conducts weekly meetings for parents and children to promote the reading habit in our families and communities."
+  },
+  {
+    title: "Kuttipattaalam Club",
+    image: "https://plus.unsplash.com/premium_vector-1682270275978-3ac5bae3ea48?q=80&w=2698&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "This is a children’s mental health awareness club that empowers kids to be ambassadors for emotional well-being in society. Through skits, songs, community projects, and pro-social initiatives, members promote kindness, resilience, and awareness about mental health. They engage in activities like public performances, peer support, awareness campaigns, and acts of service, helping to break stigma and encourage open conversations. By encouraging leadership, empathy, and confidence, the club not only equips children with essential life skills but also inspires them to create a more understanding and compassionate world. Kids receive membership certificates and the opportunity to develop new skills and hone their innate talents. Most importantly, they learn to live with a pro-social mindset which will help them tremendously out in the real world."
   }
+
 ];
 
 const contactMethods = [

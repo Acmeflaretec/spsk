@@ -34,7 +34,12 @@ const Services = () => {
       title: "Book Club for Children and Parents",
       image: "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description: "Reading is a scientifically proven factor that contributes to future academic achievement, intelligence, creativity, empathy and resilience in children. SPSK's book club, The Blyton Bunch, conducts weekly meetings for parents and children to promote the reading habit in our families and communities."
-    }
+    },
+    {
+      title: "Kuttipattaalam Club",
+      image: "https://plus.unsplash.com/premium_vector-1682270275978-3ac5bae3ea48?q=80&w=2698&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "This is a children’s mental health awareness club that empowers kids to be ambassadors for emotional well-being in society. Through skits, songs, community projects, and pro-social initiatives, members promote kindness, resilience, and awareness about mental health. They engage in activities like public performances, peer support, awareness campaigns, and acts of service, helping to break stigma and encourage open conversations. By encouraging leadership, empathy, and confidence, the club not only equips children with essential life skills but also inspires them to create a more understanding and compassionate world. Kids receive membership certificates and the opportunity to develop new skills and hone their innate talents. Most importantly, they learn to live with a pro-social mindset which will help them tremendously out in the real world."
+    } 
   ];
 
   const successStories = [
@@ -97,7 +102,7 @@ const Services = () => {
 
           {/* Methodology Section */}
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-28">
-            <motion.div 
+            {/* <motion.div 
               className="relative h-[500px] rounded-3xl overflow-hidden border-2 border-[#FFD600]/20"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -114,7 +119,7 @@ const Services = () => {
                   Developed through 34 years of research and practical application
                 </p>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             <div className="space-y-8">
               <motion.div
@@ -140,7 +145,7 @@ const Services = () => {
                 </div>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -165,12 +170,12 @@ const Services = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
 
           {/* Success Stories */}
-          <motion.div 
+          {/* <motion.div 
             className="mb-28"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -197,7 +202,7 @@ const Services = () => {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* CTA Section */}
           <div className="text-center">
