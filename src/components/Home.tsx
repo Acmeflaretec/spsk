@@ -200,7 +200,7 @@ const Home = () => {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true, margin: "-50px" }}
       >
-        <div className="container mx-auto px-4 sm:px-6">
+        <div className="container mx-auto px-4 sm:px-6">            
           <motion.div 
             variants={containerVariants}
             initial="hidden"
@@ -407,4 +407,5 @@ const Home = () => {
   );
 };
 
+export default Home;
  

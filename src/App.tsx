@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
+import Home from './components/Home'; 
 import Services from './components/Services';
 import About from './components/About';
 import Vision from './components/Vision';
 import Contact from './components/Contact';
 import Appointment from './components/Appointment';
-import Support from './components/Support';
+import Support from './components/Support'; 
 import Products from './components/Products';
 
 function App() {
