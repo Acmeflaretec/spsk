@@ -53,7 +53,8 @@ const Vision = () => {
           </motion.p>
           
           <motion.ul 
-            className="space-y-8"
+          
+            className="space-y-8 overflow-hidden"
             variants={{
               hidden: { opacity: 0 },
               visible: {

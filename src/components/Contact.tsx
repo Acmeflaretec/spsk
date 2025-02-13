@@ -64,7 +64,7 @@ const Contact = () => {
 
           {/* Contact Info */}
           <motion.div 
-            className="lg:max-w-xl w-full h-[600px] flex items-center justify-center bg-cover bg-no-repeat bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] rounded-2xl overflow-hidden"
+            className="lg:max-w-xl w-full h-[600px] max-w-[100vw] flex items-center justify-center bg-cover bg-no-repeat bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] rounded-2xl overflow-hidden"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3 }}
