@@ -295,7 +295,7 @@ Linos David has worked with children since 1990. In 2011, he founded Love You Ch
           </motion.h2>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid md:grid-cols-3 gap-8"
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -317,7 +317,9 @@ Linos David has worked with children since 1990. In 2011, he founded Love You Ch
                   hidden: { y: 30, opacity: 0 },
                   visible: { y: 0, opacity: 1 }
                 }}
-                className="group relative bg-white/5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-white/10 hover:border-[#FFD600]"
+                className={`group relative bg-white/5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-white/10 hover:border-[#FFD600] ${
+                  index === 6 ? 'md:col-span-3' : ''
+                }`}
               >
                 {/* Image Container */}
                 <motion.div 

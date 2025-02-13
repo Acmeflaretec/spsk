@@ -80,7 +80,9 @@ const Services = () => {
             {servicesData.map((service, i) => (
               <motion.div
                 key={i}
-                className="group relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#FFD600]/30 transition-all"
+                className={`group relative bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-[#FFD600]/30 transition-all ${
+                  i === servicesData.length - 1 ? 'md:col-span-2 lg:col-span-3' : ''
+                }`}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
@@ -121,7 +123,7 @@ const Services = () => {
               </div>
             </motion.div> */}
 
-            <div className="space-y-8">
+            <div className="space-y-8 w-full">
               <motion.div
                 className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10"
                 initial={{ opacity: 0, x: 40 }}
@@ -203,6 +205,7 @@ const Services = () => {
               ))}
             </div>
           </motion.div> */}
+          
 
           {/* CTA Section */}
           <div className="text-center">
