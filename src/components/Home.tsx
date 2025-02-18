@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Facebook, Instagram, Mail, Phone, Heart, Play } from 'lucide-react';
+import { ArrowRight, Facebook, Instagram, Mail, Phone, Heart, Play, Sparkles, User } from 'lucide-react';
+
 import { Link } from 'react-router-dom';
 import { DotLottiePlayer } from '@dotlottie/react-player';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,8 +32,23 @@ const childVariants = {
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [showScroll, setShowScroll] = useState(false);
 
-  return (
+  const checkScrollTop = () => {
+    setShowScroll(window.scrollY > 300);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScrollTop);
+    return () => window.removeEventListener('scroll', checkScrollTop);
+  }, []);
+
+  return (      
     <div className="bg-gradient-to-br from-[#0A0819] to-[#1A1830]">
       {/* Hero Section */}
       <motion.section 
@@ -41,6 +57,10 @@ const Home = () => {
         transition={{ duration: 1.2 }}
         className="relative min-h-[90vh] md:h-screen bg-gradient-to-br from-[#0A0819] via-[#1A1830] to-[#2A2840] overflow-x-hidden"
       >
+        {/* Manual Circles */}
+        <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#FFD600]/20 to-transparent rounded-full blur-2xl opacity-30" />
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-gradient-to-tl from-[#FF8A00]/20 to-transparent rounded-full blur-2xl opacity-30" />
+
         {/* Animated Particle Background */}
         <div className="absolute inset-0 opacity-20 overflow-hidden">
           {[...Array(40)].map((_, i) => (
@@ -62,135 +82,112 @@ const Home = () => {
           ))}
         </div>
 
-        {/* Floating Content Container */}
+        {/* Carousel Container */}
         <motion.div 
-          className="relative container mx-auto px-4 h-full flex items-center pt-20 md:pt-0 pb-24 md:pb-0"
+          className="relative container mx-auto px-4 h-full flex items-center"
           animate={{ y: [-2, 2, -2] }}
           transition={{ duration: 8, repeat: Infinity }}
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center w-full">
-            {/* Text Content */}
+          <div className="w-full h-full flex snap-x snap-mandatory overflow-x-scroll">
+            {/* Slide 1: Main Message */}
             <motion.div 
-              className="space-y-6 md:space-y-8 relative z-10 order-2 md:order-1"
-              initial={{ y: 40, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              className="w-full min-h-[90vh] flex-shrink-0 snap-center flex items-center"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8 }}
             >
-              <motion.h1 
-                className="text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-white via-[#FFE99B] to-[#FFD600] bg-clip-text text-transparent drop-shadow-2xl leading-tight"
-                initial={{ x: -40 }}
-                animate={{ x: 0 }}
-                transition={{ delay: 0.6 }}
-              >
-                Empowering Young Minds Through Holistic Development
-              </motion.h1>
-              
-              {/* Interactive Stats Grid */}
-              {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-[100vw] ">
-                {[
-                  { number: '98%', label: 'Success Rate' },
-                  { number: '5K+', label: 'Parents Trust' },
-                  { number: '34+', label: 'Years Experience' }
-                ].map((stat, i) => (
-                  <motion.div
-                    key={i}
-                    className="p-8 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 hover:bg-white/10 transition-all"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="text-3xl font-bold text-[#FFD600]">{stat.number}</div>
-                    <div className="text-sm text-purple-100/80">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div> */}
-
-              {/* Enhanced CTA Section */}
-              <motion.div 
-                className="flex flex-col gap-4 sm:gap-6 items-start"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1 }}
-              >
-                <motion.div 
-                  whileHover={{ scale: 1.05 }} 
-                  whileTap={{ scale: 0.95 }}
-                  className="relative group w-full"
+              <div className="max-w-4xl mx-auto text-center space-y-8 px-4">
+                <motion.h1 
+                  className="text-3xl sm:text-4xl md:text-6xl font-bold bg-gradient-to-r from-[#FFD600] via-[#FFB300] to-[#FF8A00] bg-clip-text text-transparent"
+                  initial={{ y: 30 }}
+                  animate={{ y: 0 }}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#FFD600] to-[#FFB300] rounded-xl blur opacity-30 group-hover:opacity-50 transition duration-1000"></div>
-                  <Link
-                    to="/appointment"
-                    className="relative inline-flex items-center bg-gradient-to-r from-[#FFD600] to-[#FFB300] text-purple-900 px-8 py-5 rounded-xl font-bold text-lg shadow-2xl hover:shadow-[0_0_40px_-5px_rgba(255,214,0,0.5)] transition-all w-full"
-                  >
-                    Book Free Consultation
-                    <ArrowRight className="ml-4 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  Unlock Your Child’s Potential with SPSK EduTech!
+                </motion.h1>
+
+                <motion.div className="space-y-6 text-base sm:text-xl text-purple-100/80">
+                  {[
+                    "Want to raise confident, emotionally strong, and intelligent children?",
+                    "Looking for expert guidance on parenting and child development?",
+                    "Ready to give your child essential life skills for a bright future?"
+                  ].map((text, i) => (
+                    <motion.div
+                      key={i}
+                      className="flex items-center gap-4 justify-center"
+                      initial={{ x: -50 }}
+                      animate={{ x: 0 }}
+                      transition={{ delay: i * 0.2 }}
+                    >
+                      <Sparkles className="text-[#FFD600] w-5 h-5" />
+                      <p className="text-left">{text}</p>
+                    </motion.div>
+                  ))}
                 </motion.div>
 
-                {/* Video Preview Button */}
-                {/* <motion.div 
+                <motion.div 
                   whileHover={{ scale: 1.05 }}
-                  className="relative group cursor-pointer w-full"
+                  className="inline-block"
                 >
-                  <div className="flex items-center gap-3 text-purple-100/90 hover:text-white transition-colors w-full">
-                    <div className="relative h-14 w-14">
-                      <div className="absolute inset-0 bg-white/10 rounded-xl transform group-hover:scale-110 transition-all"></div>
-                      <Play className="absolute inset-0 m-auto w-6 h-6" />
-                    </div>
-                    <span className="font-medium w-full">Watch Success Story</span>
-                  </div>
-                </motion.div> */}
-              </motion.div>
+                  <Link
+                    to="/contact"
+                    className="inline-flex items-center bg-gradient-to-r from-[#FFD600] to-[#FFB300] text-purple-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-[0_0_30px_-5px_rgba(255,214,0,0.4)] transition-all"
+                  >
+                    Join Us Now
+                    <ArrowRight className="ml-2 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
+              </div>
             </motion.div>
 
-            {/* Animated Illustration Section */}
+            {/* Slide 2: Teena Benjamin Profile */}
             <motion.div 
-              className="relative order-1 md:order-2 h-[300px] md:h-[400px] lg:h-[600px]"
-              initial={{ scale: 0.8, opacity: 0 }}
+              className="w-full min-h-[90vh] flex-shrink-0 snap-center flex items-center"
+              initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ delay: 0.5 }}
+              transition={{ duration: 0.8 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#1A1830]/10 to-transparent" />
-              
-              {/* Lottie Player with Fallback */}
-              <div className="relative w-full h-full">
-                <DotLottiePlayer
-                  src="https://lottie.host/8c9e8b60-31bc-4b05-b27b-2e308559c1c8/9DJCEAQLRH.lottie"
-                  loop
-                  autoplay
-                  className="w-full h-full"
-                />
-              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto px-4">
+                <div className="relative h-64 w-64 md:h-96 md:w-96 mx-auto rounded-2xl overflow-hidden bg-gray-700/30 border-2 border-[#FFD600]/20">
+                  <div className="absolute inset-0 bg-[#1A1830]/50 flex items-center justify-center">
+                      <img src="/assets/teena.jpeg"className="w-20 h-20 md:w-32 md:h-32 text-[#FFD600]/50 rounded-2xl"
+                      alt="Teena Benjamin"
+                  
+                     />
+                  </div>
+                </div>
 
-              {/* Floating Badges */}
-              {/* <div className="absolute bottom-2 md:bottom-8 left-0 right-0 flex flex-col sm:flex-row justify-center gap-2 px-4">
-                {['Google 5★ Reviews', '2024 Education Award'].map((badge, i) => (
-                  <motion.div
-                    key={i}
-                    className="px-4 py-2 bg-white/5 backdrop-blur-sm rounded-full border border-white/10 text-sm text-purple-100/90 hover:text-white transition-colors"
-                    whileHover={{ y: -5 }}
-                  >
-                    ★★★★★ {badge}
-                  </motion.div>
-                ))}
-              </div> */}
+                <div className="space-y-4 md:space-y-6 text-center md:text-left">
+                  <h3 className="text-xl md:text-2xl font-bold text-[#FFD600]">Teena Benjamin</h3>
+                  <p className="text-base md:text-lg text-purple-100/80">Parenting & Education Coach</p>
+                  <blockquote className="text-lg md:text-2xl italic text-purple-100/90 border-l-4 border-[#FFD600] pl-4 md:pl-6 py-2 md:py-3">
+                    "If our children learn to navigate the battlefield of the mind, navigating the real world becomes easier!"
+                  </blockquote>
+                  <p className="text-sm md:text-base text-purple-100/80">
+                    Empowering parents and educators to raise emotionally strong, intelligent, and resilient children.
+                  </p>
+                  <button className="w-full md:w-auto bg-[#FFD600]/10 hover:bg-[#FFD600]/20 text-[#FFD600] px-4 py-2 md:px-6 md:py-3 rounded-lg transition-colors text-sm md:text-base">
+                    Join Our Journey
+                  </button>
+                </div>
+              </div>
             </motion.div>
           </div>
         </motion.div>
 
         {/* Animated Scroll Indicator */}
         <motion.div 
-          className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5 }}
         >
-          <div className="w-6 h-10 rounded-full border-2 border-[#FFD600] flex justify-center p-1">
+          <div className="w-5 h-8 sm:w-6 sm:h-10 rounded-full border-2 border-[#FFD600] flex justify-center p-1">
             <motion.div
               className="w-2 h-2 bg-[#FFD600] rounded-full"
-              animate={{ y: [0, 12, 0] }}
+              animate={{ y: [0, 8, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
             />
           </div>
-          <span className="text-sm text-[#FFD600]/80">Explore More</span>
         </motion.div>
       </motion.section>
 
