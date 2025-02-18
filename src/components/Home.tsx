@@ -149,7 +149,7 @@ const Home = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto px-4">
                 <div className="relative h-64 w-64 md:h-96 md:w-96 mx-auto rounded-2xl overflow-hidden bg-gray-700/30 border-2 border-[#FFD600]/20">
                   <div className="absolute inset-0 bg-[#1A1830]/50 flex items-center justify-center">
-                      <img src="/assets/teena.jpeg"className="w-20 h-20 md:w-32 md:h-32 text-[#FFD600]/50 rounded-2xl"
+                      <img src="/assets/teena.jpeg"className="w-40 h-40 md:w-64 md:h-64 text-[#FFD600]/50"
                       alt="Teena Benjamin"
                   
                      />
