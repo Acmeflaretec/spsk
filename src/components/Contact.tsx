@@ -11,60 +11,10 @@ const Contact = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-24">
-          {/* Contact Form */}
-          <motion.div 
-            className="flex items-center lg:mb-0 mb-10"
-            initial={{ x: -50 }}
-            animate={{ x: 0 }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="w-full">
-              <h4 className="text-[#FFD600] text-lg font-medium mb-4">Get in Touch</h4>
-              <h2 className="text-4xl font-bold text-white mb-12">Reach Out To Us</h2>
-              
-              <motion.form 
-                className="space-y-6"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
-                <motion.div whileHover={{ scale: 1.02 }}>
-                  <input 
-                    type="text" 
-                    className="w-full h-14 bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-lg rounded-full border border-white/20 px-6 focus:outline-none focus:ring-2 focus:ring-[#FFD600]"
-                    placeholder="Name"
-                  />
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.02 }}>
-                  <input 
-                    type="email" 
-                    className="w-full h-14 bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-lg rounded-full border border-white/20 px-6 focus:outline-none focus:ring-2 focus:ring-[#FFD600]"
-                    placeholder="Email"
-                  />
-                </motion.div>
-
-                <motion.div whileHover={{ scale: 1.02 }}>
-                  <textarea 
-                    className="w-full h-48 bg-white/10 backdrop-blur-sm text-white placeholder-gray-400 text-lg rounded-2xl border border-white/20 p-6 focus:outline-none focus:ring-2 focus:ring-[#FFD600] resize-none"
-                    placeholder="Message"
-                  />
-                </motion.div>
-
-                <motion.button 
-                  className="w-full h-14 bg-gradient-to-r from-[#FFD600] to-[#FFB300] text-black text-lg font-bold rounded-full hover:shadow-lg hover:shadow-[#FFD600]/30 transition-all"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  Send Message
-                </motion.button>
-              </motion.form>
-            </div>
-          </motion.div>
-
+        <div className="grid grid-cols-1">
           {/* Contact Info */}
           <motion.div 
-            className="lg:max-w-xl w-full h-[600px] max-w-[100vw] flex items-center justify-center bg-cover bg-no-repeat bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] rounded-2xl overflow-hidden"
+            className="lg:max-w-xl w-full h-[600px] max-w-[100vw] flex items-center justify-center bg-cover bg-no-repeat bg-[url('https://pagedone.io/asset/uploads/1696245837.png')] rounded-2xl overflow-hidden mx-auto"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3 }}

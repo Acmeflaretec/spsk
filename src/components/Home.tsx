@@ -88,6 +88,24 @@ const Home = () => {
           animate={{ y: [-2, 2, -2] }}
           transition={{ duration: 8, repeat: Infinity }}
         >
+          {/* Navigation Arrows */}
+          <div className="absolute inset-0 flex items-center justify-between px-4 pointer-events-none">
+            <motion.button
+              className="pointer-events-auto p-2 rounded-full bg-[#FFD600]/20 hover:bg-[#FFD600]/30 backdrop-blur-sm transition-all"
+              whileHover={{ scale: 1.1 }}
+              onClick={() => document.querySelector('.snap-mandatory')?.scrollBy({ left: -window.innerWidth, behavior: 'smooth' })}
+            >
+              <ArrowRight className="w-8 h-8 text-[#FFD600] rotate-180" />
+            </motion.button>
+            <motion.button
+              className="pointer-events-auto p-2 rounded-full bg-[#FFD600]/20 hover:bg-[#FFD600]/30 backdrop-blur-sm transition-all"
+              whileHover={{ scale: 1.1 }}
+              onClick={() => document.querySelector('.snap-mandatory')?.scrollBy({ left: window.innerWidth, behavior: 'smooth' })}
+            >
+              <ArrowRight className="w-8 h-8 text-[#FFD600]" />
+            </motion.button>
+          </div>
+
           <div className="w-full h-full flex snap-x snap-mandatory overflow-x-scroll">
             {/* Slide 1: Main Message */}
             <motion.div 
@@ -128,13 +146,15 @@ const Home = () => {
                   whileHover={{ scale: 1.05 }}
                   className="inline-block"
                 >
-                  <Link
-                    to="/contact"
+                  <a
+                    href="https://wa.me/918891337811"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center bg-gradient-to-r from-[#FFD600] to-[#FFB300] text-purple-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-[0_0_30px_-5px_rgba(255,214,0,0.4)] transition-all"
                   >
                     Join Us Now
                     <ArrowRight className="ml-2 sm:ml-4 w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-1 transition-transform" />
-                  </Link>
+                  </a>
                 </motion.div>
               </div>
             </motion.div>
