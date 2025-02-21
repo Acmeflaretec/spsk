@@ -107,13 +107,16 @@ const Appointment = () => {
               </ul>
             </motion.div>
 
-            <motion.button 
-              className="w-full bg-gradient-to-r from-[#FFD600] to-[#FFB300] text-black py-4 px-8 rounded-xl font-bold hover:shadow-lg hover:shadow-[#FFD600]/30 transition-all"
+            <motion.a 
+              href="https://wa.me/918891337811"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full bg-gradient-to-r from-[#FFD600] to-[#FFB300] text-black py-4 px-8 rounded-xl font-bold hover:shadow-lg hover:shadow-[#FFD600]/30 transition-all cursor-pointer flex justify-center items-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Book Now
-            </motion.button>
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>

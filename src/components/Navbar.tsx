@@ -35,6 +35,7 @@ const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
+   
     >
       <motion.div
         className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#0A0819] z-50"
@@ -42,17 +43,19 @@ const Navbar = () => {
         animate={{ opacity: isMounted ? 0 : 1 }}
         transition={{ duration: 0.5 }}
         style={{ pointerEvents: isMounted ? 'none' : 'auto' }}
+        
       >
         <motion.div
-          className="w-12 h-12 border-4 border-[#FFD600] border-t-transparent rounded-full"
+          className="w-12 h-12 border-4 border-[#FFD600] border-t-transparent rounded-full blur-sm"
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+        
         />
       </motion.div>
 
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          <Link to="/" className="text-xl font-bold">SPSK</Link>
+        <div className="flex justify-between items-center h-16 ">
+          <Link to="/" className="text-2xl font-bold font-poppins">SPSK EDUTECH</Link>
           
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
