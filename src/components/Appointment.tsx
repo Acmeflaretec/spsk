@@ -102,8 +102,18 @@ const Appointment = () => {
                 Contact us for questions or rescheduling:
               </p>
               <ul className="space-y-2 text-purple-100/80">
-                <li>Phone: <a href="tel:8891337811" className="text-[#FFD600] hover:text-[#FFB300]">8891337811</a></li>
-                <li>Email: <a href="mailto:spskedutech@gmail.com" className="text-[#FFD600] hover:text-[#FFB300]">spskedutech@gmail.com</a></li>
+                <li>Phone: 
+                  <a href="tel:+918891337811" className="text-[#FFD600] hover:text-[#FFB300] ml-1">+91 88913 37811</a>
+                </li>
+                <li>Phone: 
+                  <a href="tel:+919544145220" className="text-[#FFD600] hover:text-[#FFB300] ml-1">+91 95441 45220</a>
+                </li>
+                <li>Phone: 
+                  <a href="tel:+919886323916" className="text-[#FFD600] hover:text-[#FFB300] ml-1">+91 98863 23916</a>
+                </li>
+                <li>Email: 
+                  <a href="mailto:spskedutech@gmail.com" className="text-[#FFD600] hover:text-[#FFB300] ml-1">spskedutech@gmail.com</a>
+                </li>
               </ul>
             </motion.div>
 

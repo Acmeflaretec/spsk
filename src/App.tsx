@@ -55,11 +55,33 @@ function App() {
 
         <footer className="bg-gradient-to-b from-[#0A0819] to-[#1A1830] text-white py-8 border-t border-white/10">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold mb-2 text-[#FFD600]">SPSK EduTech</h3>
                 <p className="text-[#FFD600]/80">Empowering children, parents, and teachers</p>
               </div>
+              
+              <div className="text-center md:text-left">
+                <h3 className="text-xl font-bold mb-2 text-[#FFD600]">Contact Us</h3>
+                <div className="space-y-2">
+                  <p className="text-[#FFD600]/80">SPSK Edu Tech Private Limited</p>
+                  <p className="text-[#FFD600]/80">XV C 502 Near Thannikkal Bankers,</p>
+                  <p className="text-[#FFD600]/80">Koothatukulam, Ernakulam - 686662</p>
+                  <p className="text-[#FFD600]/80">Kerala, India</p>
+                </div>
+              </div>
+
+              <div className="text-center md:text-left">
+                <h3 className="text-xl font-bold mb-2 text-[#FFD600]">Phone Numbers</h3>
+                <div className="space-y-2">
+                  <a href="tel:+918891337811" className="block text-[#FFD600]/80 hover:text-[#FFD600]">+91 88913 37811</a>
+                  <a href="tel:+919544145220" className="block text-[#FFD600]/80 hover:text-[#FFD600]">+91 95441 45220</a>
+                  <a href="tel:+919886323916" className="block text-[#FFD600]/80 hover:text-[#FFD600]">+91 98863 23916</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
               <div className="flex space-x-6">
                 <a href="https://www.facebook.com/betterparentbetterkids" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFD600] transition-colors">
                   <Facebook className="w-6 h-6" />
@@ -74,9 +96,9 @@ function App() {
                   <Phone className="w-6 h-6" />
                 </a>
               </div>
-            </div>
-            <div className="mt-8 text-center text-[#FFD600]/80">
-              <p>&copy; {new Date().getFullYear()} SPSK EduTech. All rights reserved.</p>
+              <p className="text-center text-[#FFD600]/80">
+                &copy; {new Date().getFullYear()} SPSK EduTech. All rights reserved.
+              </p>
             </div>
           </div>
         </footer>
