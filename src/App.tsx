@@ -2,14 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Facebook, Instagram, Mail, Phone, ArrowUp } from 'lucide-react';
 import Navbar from './components/Navbar';
-import Home from './components/Home';   
+import Home from './components/Home';
 import Services from './components/Services';
 import About from './components/About';
 import Vision from './components/Vision';
 import Contact from './components/Contact';
 import Appointment from './components/Appointment';
-import Support from './components/Support'; 
+import Support from './components/Support';
 import Products from './components/Products';
+import AnnualReturns from './components/AnnualReturns';
 
 function App() {
   const [showScroll, setShowScroll] = useState(false);
@@ -31,7 +32,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gradient-to-b from-[#0A0819] to-[#1A1830]">
         <Navbar />
-        
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
@@ -41,13 +42,13 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/annual-returns" element={<AnnualReturns />} />
         </Routes>
 
         <button
           onClick={scrollToTop}
-          className={`fixed bottom-4 right-4 p-3 rounded-full bg-gradient-to-b from-[#0A0819] to-[#1A1830] text-[#FFD600] shadow-xl transition-all duration-300 ${
-            showScroll ? 'opacity-100' : 'opacity-0'
-          } hover:scale-105 hover:shadow-2xl`}
+          className={`fixed bottom-4 right-4 p-3 rounded-full bg-gradient-to-b from-[#0A0819] to-[#1A1830] text-[#FFD600] shadow-xl transition-all duration-300 ${showScroll ? 'opacity-100' : 'opacity-0'
+            } hover:scale-105 hover:shadow-2xl`}
           aria-label="Back to top"
         >
           <ArrowUp className="w-6 h-6" />
@@ -60,7 +61,7 @@ function App() {
                 <h3 className="text-xl font-bold mb-2 text-[#FFD600]">SPSK EduTech</h3>
                 <p className="text-[#FFD600]/80">Empowering children, parents, and teachers</p>
               </div>
-              
+
               <div className="text-center md:text-left">
                 <h3 className="text-xl font-bold mb-2 text-[#FFD600]">Contact Us</h3>
                 <div className="space-y-2">
